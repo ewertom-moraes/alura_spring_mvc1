@@ -7,8 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -39,6 +41,15 @@ public class ProdutosController {
 	public ModelAndView form(Produto produto){
 		ModelAndView mv = new ModelAndView("produtos/form");
 		mv.addObject("tipos",TipoPreco.values());
+		return mv;
+	}
+	
+	@RequestMapping("/detalhe/{id}")
+	public ModelAndView detalhe(@PathVariable("id") Integer id){
+		ModelAndView mv = new ModelAndView("produtos/detalhe");
+		Produto produto = produtos.find(id);
+		mv.addObject("produto", produto);
+		System.out.println(produto.getTitulo());
 		return mv;
 	}
 	

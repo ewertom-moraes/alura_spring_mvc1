@@ -26,6 +26,9 @@
 <%-- 							<span>${preco.valor}</span> --%>
 <%-- 						</c:forEach> --%>
 					</td>
+					<td>
+						<a href="detalhe/${p.id}">${p.titulo}</a>
+					</td>
 				</tr>
 			</c:forEach>
 		</tbody>
