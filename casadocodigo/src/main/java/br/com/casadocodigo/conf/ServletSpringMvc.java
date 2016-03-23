@@ -1,6 +1,7 @@
 package br.com.casadocodigo.conf;
 
 import javax.servlet.Filter;
+import javax.servlet.ServletRegistration.Dynamic;
 
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -29,4 +30,10 @@ public class ServletSpringMvc extends AbstractAnnotationConfigDispatcherServletI
 
         return new Filter[] {encodingFilter};
 }
+    
+   @Override
+	protected void customizeRegistration(Dynamic registration) {
+		// TODO Auto-generated method stub
+		super.customizeRegistration(registration);
+	}
 }

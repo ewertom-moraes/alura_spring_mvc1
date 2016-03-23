@@ -22,9 +22,9 @@
 					<td>${p.descricao}</td>
 					<td>${p.paginas}</td>
 					<td>
-						<c:forEach items="${p.preco}" var="preco">
-							<span>${preco.valor}</span>
-						</c:forEach>
+<%-- 						<c:forEach items="${p.preco}" var="preco"> --%>
+<%-- 							<span>${preco.valor}</span> --%>
+<%-- 						</c:forEach> --%>
 					</td>
 				</tr>
 			</c:forEach>
